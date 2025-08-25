@@ -32,8 +32,8 @@
 
 .modal__close-btn {
   position: absolute;
-  top: 16px;
-  right: 24px;
+  top: 32px;
+  right: 50px;
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -65,9 +65,10 @@
 }
 
 .modal__input {
+  box-sizing: border-box;
   display: block;
   margin: 8px 0 32px;
-  width: 96%;
+  width: 100%;
   height: 100%;
   border-radius: 8px;
   border: 1px solid rgba(33, 33, 33, 0.4);
@@ -109,14 +110,14 @@
   .modal__title {
     margin: 0;
     font-size: 20px;
-    padding: 12px 12px 24px;
+    padding: 12px 0 24px;
     display: flex;
     justify-content: space-between;
   }
 
   .modal__input {
     font-size: 16px;
-    width: 93%;
+    width: 100%;
   }
 
   .modal__submit-btn {
@@ -124,7 +125,7 @@
   }
 
   .modal__close-btn {
-    top: 6px;
-    right: 6px;
+    top: 12px;
+    right: 12px;
   }
 }
