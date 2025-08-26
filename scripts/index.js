@@ -51,13 +51,13 @@ const newPostDescriptionInput = newPostModal.querySelector(
 );
 
 // Helper functions
-function openModal(modal) {
+const openModal = (modal) => {
   modal.classList.add("modal_is-opened");
-}
+};
 
-function closeModal(modal) {
+const closeModal = (modal) => {
   modal.classList.remove("modal_is-opened");
-}
+};
 
 // Event Listeners for Edit Profile Modal
 editProfileBtn.addEventListener("click", () => {
