@@ -39,7 +39,11 @@
             <!-- Card Template -->
             <template id="card-template">
               <li class="card">
-                <button class="card__delete-btn" type="button"></button>
+                <button
+                  aria-label="Delete card"
+                  class="card__delete-btn"
+                  type="button"
+                ></button>
                 <img src="#" alt="#" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
@@ -74,6 +78,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
 
@@ -84,6 +89,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -107,6 +113,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
 
@@ -117,6 +124,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
