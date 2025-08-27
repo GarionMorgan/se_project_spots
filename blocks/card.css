@@ -27,6 +27,15 @@
   cursor: pointer;
 }
 
+.card__like-btn_active {
+  background-image: url(../images/like_icon_active_red.svg);
+  opacity: 1;
+}
+
+.card__like-btn_active:hover {
+  background-image: url(../images/like_icon_active_red.svg);
+  opacity: 0.4;
+}
 .card__title {
   margin: 0;
   font-weight: 500;

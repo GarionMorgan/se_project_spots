@@ -66,6 +66,11 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active");
+  });
+
   return cardElement;
 }
 
@@ -105,13 +110,6 @@ newPostBtn.addEventListener("click", () => {
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
-
-// function handleNewPostSubmit(evt) {
-//   evt.preventDefault();
-//   console.log(newPostImageInput.value);
-//   console.log(newPostDescriptionInput.value);
-//   closeModal(newPostModal);
-// }
 
 newPostForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
