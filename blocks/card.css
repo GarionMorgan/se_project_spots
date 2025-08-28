@@ -12,6 +12,10 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__content {
   display: flex;
   align-items: center;
@@ -36,6 +40,7 @@
 .card__like-btn_active {
   background-image: url(../images/like_icon_active_red.svg);
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 .card__like-btn_active:hover {
@@ -56,12 +61,13 @@
 
 .card__delete-btn:hover {
   background-image: url(../images/trash_icon_filled_red.svg);
+  cursor: pointer;
 }
 
 .card__title {
   margin: 0;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 100%;
   text-overflow: ellipsis;
   overflow: hidden;

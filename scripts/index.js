@@ -105,8 +105,13 @@ const closeModal = (modal) => {
   modal.classList.remove("modal_is-opened");
 };
 
-previewModalCloseBtn.addEventListener("click", () => {
-  closeModal(previewModal);
+//Closes all modals
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+
+  button.addEventListener("click", () => closeModal(modal));
 });
 
 // Event Listeners for Edit Profile Modal
@@ -140,8 +145,6 @@ newPostCloseBtn.addEventListener("click", () => {
 newPostForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
-  newPostForm.reset();
-
   const inputValues = {
     name: newPostDescriptionInput.value,
     link: newPostImageInput.value,
@@ -151,11 +154,17 @@ newPostForm.addEventListener("submit", (evt) => {
 
   cardsList.prepend(cardElement);
 
+  newPostForm.reset();
+
   closeModal(newPostModal);
 });
 
 //loop through cards array
 initialCards.forEach((item) => {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
+  function renderCard(item, method = "append") {
+    const cardElement = getCardElement(item);
+
+    cardsList[method](cardElement);
+  }
+  renderCard(item);
 });
