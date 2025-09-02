@@ -13,25 +13,25 @@ const setEventListeners = (formEl) => {
   // };
 
   const showInputError = (formEl, inputEl, errorMessage) => {
-    const errorEl = document.querySelector(`#${inputEl.id}-error`);
-    inputEl.classList.add("modal__input_type_error");
+    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
     errorEl.textContent = errorMessage;
-    errorEl.classList.add("modal__error_visible");
+    inputEl.classList.add("modal__input_type_error");
+    // errorEl.classList.add("modal__error_visible");
   };
 
-  // const hideInputError = (inputEl) => {
-  //   const errorMsgID = inputEl.nextElementSibling;
+  const hideInputError = (formEl, inputEl) => {
+    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
 
-  //   inputEl.classList.remove("modal__input_type_error");
-  //   errorEl.textContent = "";
-  //   errorEl.classList.remove("modal__error_visible");
-  // };
+    inputEl.classList.remove("modal__input_type_error");
+    errorEl.textContent = "";
+    // errorEl.classList.remove("modal__error_visible");
+  };
 
   const checkInputValidity = (formEl, inputEl) => {
     if (!inputEl.validity.valid) {
       showInputError(formEl, inputEl, inputEl.validationMessage);
     } else {
-      // hideInputError(inputEl);
+      hideInputError(formEl, inputEl);
     }
   };
 

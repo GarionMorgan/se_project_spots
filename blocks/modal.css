@@ -101,6 +101,10 @@
 .modal__input::placeholder {
   color: #2121214d;
 }
+/* Placed to overwrite to show design when called */
+.modal__input_type_error {
+  border: 1px solid #ff0000;
+}
 
 .modal__error {
   display: block;
