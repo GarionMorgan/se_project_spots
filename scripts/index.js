@@ -113,6 +113,18 @@ closeButtons.forEach((button) => {
   const modal = button.closest(".modal");
 
   button.addEventListener("click", () => closeModal(modal));
+
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      closeModal(modal);
+    }
+  });
 });
 
 // Event Listeners for Edit Profile Modal
