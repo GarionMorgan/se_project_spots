@@ -119,10 +119,11 @@ closeButtons.forEach((button) => {
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editProfileForm, [
-    editProfileNameInput,
-    editProfileDescriptionInput,
-  ]);
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 
@@ -161,7 +162,7 @@ newPostForm.addEventListener("submit", (evt) => {
 
   newPostForm.reset();
 
-  disableBtn(newPostSubmitBtn);
+  disableBtn(newPostSubmitBtn, settings);
 
   closeModal(newPostModal);
 });
