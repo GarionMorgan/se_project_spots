@@ -132,6 +132,11 @@
   white-space: nowrap;
 }
 
+.modal__submit-btn_disabled {
+  background-color: #212121;
+  opacity: 50%;
+}
+
 .modal__submit-btn:hover {
   opacity: 80%;
   cursor: pointer;
