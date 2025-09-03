@@ -100,10 +100,34 @@ function getCardElement(data) {
 // Helper functions
 const openModal = (modal) => {
   modal.classList.add("modal_is-opened");
+
+  document.addEventListener("keydown", handleEscapeKey);
+
+  modal.addEventListener("click", handleOverlayClick);
 };
 
 const closeModal = (modal) => {
   modal.classList.remove("modal_is-opened");
+
+  document.removeEventListener("keydown", handleEscapeKey);
+
+  modal.removeEventListener("click", handleOverlayClick);
+};
+
+//function handler for closing modals
+const handleEscapeKey = (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+};
+
+const handleOverlayClick = (evt) => {
+  if (evt.target.classList.contains("modal_is-opened")) {
+    closeModal(evt.target);
+  }
 };
 
 //Closes all modals
@@ -113,18 +137,6 @@ closeButtons.forEach((button) => {
   const modal = button.closest(".modal");
 
   button.addEventListener("click", () => closeModal(modal));
-
-  modal.addEventListener("click", (evt) => {
-    if (evt.target === modal) {
-      closeModal(modal);
-    }
-  });
-
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-      closeModal(modal);
-    }
-  });
 });
 
 // Event Listeners for Edit Profile Modal

@@ -106,7 +106,7 @@
   border: 1px solid #ff0000;
 }
 
-.modal__error {
+.modal__error_visible {
   display: block;
   color: #ff0000;
   opacity: 70%;
