@@ -1,3 +1,10 @@
+import {
+  enableValidation,
+  settings,
+  disableBtn,
+  resetValidation,
+} from "./validation.js";
+
 //Cards array
 const initialCards = [
   {
@@ -200,3 +207,5 @@ initialCards.forEach((item) => {
   }
   renderCard(item);
 });
+
+enableValidation(settings);
