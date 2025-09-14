@@ -33,5 +33,5 @@ Github Pages: https://garionmorgan.github.io/se_project_spots
 
 **Video**
 
-Link to a video explaining the project 
+Link to a video explaining the project
 https://drive.google.com/file/d/1Yylsf6uwuwx-U3lfd4pteTcvKYqDQSBv/view?usp=sharing
