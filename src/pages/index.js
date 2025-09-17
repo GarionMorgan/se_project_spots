@@ -61,9 +61,7 @@ api
     });
     profileNameEl.textContent = profile.name;
     profileDescriptionEl.textContent = profile.about;
-    // profileAvatarEl.src = profile.avatar;
-    // console.log(profile.avatar);
-    // console.log("profile avatar");
+    profileAvatarEl.src = profile.avatar;
     editProfileNameInput.value = profile.name;
     editProfileDescriptionInput.value = profile.about;
   })
@@ -306,7 +304,7 @@ const handlePostSubmit = (evt) => {
     .then((data) => {
       const cardElement = getCardElement(data);
 
-      cardsList.prepend(cardElement);
+      cardsList.append(cardElement);
 
       newPostForm.reset();
 
@@ -355,7 +353,10 @@ avatarForm.addEventListener("submit", (evt) => {
       disableBtn(avatarSubmitBtn, settings);
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    });
 });
 
 //event listeners for Delete Card Modal
