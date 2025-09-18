@@ -341,7 +341,8 @@ avatarCloseBtn.addEventListener("click", () => {
 
 avatarForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  console.log(avatarInput.value);
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true);
   api
     .editAvatarInfo({
       avatar: avatarInput.value,
