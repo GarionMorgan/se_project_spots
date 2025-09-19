@@ -304,7 +304,7 @@ const handlePostSubmit = (evt) => {
     .then((data) => {
       const cardElement = getCardElement(data);
 
-      cardsList.append(cardElement);
+      cardsList.prepend(cardElement);
 
       newPostForm.reset();
 
